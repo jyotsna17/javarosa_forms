@@ -17,17 +17,16 @@ class select:
     def add_item(self, label_val , value_val):
 
         # add an item to the select node
-
-        item = self.doc.createElement("item")
-        label = self.doc.createElement("label")
-        value = self.doc.createElement("value")
-        label.appendChild(self.doc.createTextNode(label_val))
-        value.appendChild(self.doc.createTextNode(value_val))
-        item.appendChild(label)
-        item.appendChild(value)
-        self.select.appendChild(item)
-        print self.doc.toprettyxml()
-        
+            item = self.doc.createElement("item")
+            label = self.doc.createElement("label")
+            value = self.doc.createElement("value")
+            label.appendChild(self.doc.createTextNode(label_val))
+            value.appendChild(self.doc.createTextNode(value_val))
+            item.appendChild(label)
+            item.appendChild(value)
+            self.select.appendChild(item)
+            print self.doc.toprettyxml()
+            
         
         
 
