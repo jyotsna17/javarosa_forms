@@ -55,7 +55,6 @@ class select:
             item.appendChild(label)
             item.appendChild(value)
             self.select.appendChild(item)
-            print self.doc.toprettyxml()
 
     def add_referenceAttribute(self,ref):
         self.select.setAttribute("ref",ref)
