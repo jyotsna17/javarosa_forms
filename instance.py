@@ -26,7 +26,32 @@ class instance:
 
     def return_instance_node(self):
         return self.instance
-    
+
+    def add_node(self,node):
+        self.instance_name.appendChild(node)
+
+
+class subinstance:
+
+    def __init__(self,doc,instance_name):
+        self.doc = doc
+        self.instance = self.doc.createElement(instance_name)
+
+    def add_sub_instance(self, sub_node):
+        self.instance.appendChild(sub_node)
+
+    def add_node_with_value(self,node_name , value):
+        node = self.doc.createElement(node_name)
+        node.appendChild(self.doc.createTextNode(value))
+        self.instance.appendChild(node)
+
+    def add_only_node(self,node_name):
+        node = self.doc.createElement(node_name)
+        self.instance.appendChild(node)
+
+    def return_instance_node(self):
+        return self.instance
+
                           
 
 
