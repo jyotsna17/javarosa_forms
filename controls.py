@@ -24,7 +24,7 @@ class select1:
             item.appendChild(value)
             self.select1.appendChild(item)
             self.items = self.items +1
-            print self.doc.toprettyxml()
+            #print self.doc.toprettyxml()
 
 
     def add_referenceAttribute(self,ref):
@@ -62,7 +62,7 @@ class select:
     def return_object(self):
         return self.select
 
-class input:
+class inputs:
     
     def __init__(self,doc ,question):
         self.doc = doc
