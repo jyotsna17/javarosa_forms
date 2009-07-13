@@ -9,10 +9,7 @@ class nodeset:
         self.nodeset.setAttribute("nodeset",nodeset_name)
 
     def update_required(self,true_or_false):
-      if(true_or_false == "true"):
-        self.nodeset.setAttribute("required","true()")
-      else:
-        self.nodeset.setAttribute("required","false()")
+        self.nodeset.setAttribute("required",true_or_false)
 
     def update_type(self,data_type):
         self.nodeset.setAttribute("type",data_type)
