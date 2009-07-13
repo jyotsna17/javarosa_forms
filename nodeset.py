@@ -20,8 +20,17 @@ class nodeset:
     def return_object(self):
         return self.nodeset
 
+    def add_lt_constraint(self,constraint):
+        self.nodeset.setAttribute("constraint",". &lt;="+ constraint)
 
-      # need to add support for relevant and constraints.
+    def add_gt_constraint(self,constraint):
+        self.nodeset.setAttribute("constraint",". &gt;=" + constraint)
+    def add_lt_gt_constraint(self,lt_constraint , gt_constraint):
+        self.nodeset.setAttribute("constraint",". &lt;=" + lt_constraint + " " +". &gt;=" + gt_constraint)
 
-      
+    def set_constraint_message(message):
+        self.nodeset.setAttribute("jr:constraintMsg = ",message)
+
     
+       #need to add support for relevant attribute
+        
