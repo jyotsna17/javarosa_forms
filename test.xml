@@ -1,1 +1,65 @@
-<?xml version="1.0" ?><h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><h:head><h:title>Test Form</h:title><model><instance><household><name/><age/></household></instance><bind nodeset="name" readonly="false()" required="true()"/><bind nodeset="age" readonly="false()" required="true()"/></model></h:head><h:body><group><label>person's details</label><input><label>Enter5 patients name</label></input><select1><label>Is the child suffering from malaria</label><item><label>yes</label><value>yes</value></item><item><label>no</label><value>no</value></item></select1></group></h:body></h:html>
+<?xml version="1.0" ?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<h:head>
+		<h:title>
+			Test Form
+		</h:title>
+		<model>
+			<instance>
+				<household>
+					<name/>
+					<age/>
+					<birthday/>
+					<zipcode/>
+				</household>
+			</instance>
+			<bind nodeset="name" readonly="false()" required="true()"/>
+			<bind nodeset="age" readonly="false()" required="true()"/>
+			<bind constraint=". &amp;lt;=today" jr:constraintMsg="Birthdays cannot be in the future!" nodeset="birthday" readonly="false()" required="true()" type="date"/>
+			<bind constraint=". &amp;lt;=99950 and . &amp;gt;=00210" jr:constraintMsg="Zipcodes must less than 99951 and greater than 00209!" nodeset="zipcode" readonly="false()" required="true()" type="integer"/>
+		</model>
+	</h:head>
+	<h:body>
+		<group>
+			<label>
+				person's details
+			</label>
+			<input ref="name">
+				<label>
+					Enter5 patients name
+				</label>
+			</input>
+			<select1 ref="age">
+				<label>
+					Is the child suffering from malaria
+				</label>
+				<item>
+					<label>
+						yes
+					</label>
+					<value>
+						yes
+					</value>
+				</item>
+				<item>
+					<label>
+						no
+					</label>
+					<value>
+						no
+					</value>
+				</item>
+			</select1>
+			<input ref="birthday">
+				<label>
+					When was the person born
+				</label>
+			</input>
+			<input ref="zipcode">
+				<label>
+					Household features
+				</label>
+			</input>
+		</group>
+	</h:body>
+</h:html>
